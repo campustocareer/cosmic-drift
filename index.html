@@ -1,16 +1,74 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cosmic Drift — Endless 3D Game</title>
   <meta name="description" content="An endless 3D space glider game built with Three.js" />
   <link rel="icon" href="assets/logo.png" />
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #04102a;
+      font-family: sans-serif;
+      color: #fff;
+    }
+
+    #game-wrap {
+      width: 100%;
+      height: 100vh;
+      display: block;
+    }
+
+    #score {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 18px;
+    }
+
+    #msg {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 22px;
+      text-align: center;
+      color: #a6f0ff;
+    }
+
+    #ui-buttons {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Cosmic Drift — Endless 3D Game</h1>
-  <p>Game loading... Please ensure your browser supports WebGL.</p>
+  <div id="game-wrap"></div>
+  <div id="score">Distance: 0 m</div>
+  <div id="msg">Press Start — glide through the stars</div>
+  <div id="ui-buttons">
+    <button id="startBtn">Start</button>
+    <button id="pauseBtn">Pause</button>
+    <button id="thumbBtn">Thumbnail</button>
+  </div>
+
+  <!-- Three.js library -->
   <script src="https://unpkg.com/three@0.150.1/build/three.min.js"></script>
+  <!-- Your game script -->
   <script src="scripts/game.js"></script>
 </body>
+
 </html>
